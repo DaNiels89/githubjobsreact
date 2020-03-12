@@ -38,9 +38,9 @@ function App() {
   const jobTitle = () =>
     jobs.map(job => (
       <div>
-        <li>{job.company}</li>
         <li>{job.title}</li>
-        {/* <li>{job.description}</li> */}
+        <li>{job.description}</li>
+        <li>{job.company}</li>
       </div>
     ));
   // const jobDescription = () => jobs.map(job => <li>{job.description}</li>);

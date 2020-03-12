@@ -40,7 +40,7 @@ function App() {
       <div>
         <li>{job.company}</li>
         <li>{job.title}</li>
-        {/* <li>{job.description}</li> */}
+        <li>{job.description}</li>
       </div>
     ));
   // const jobDescription = () => jobs.map(job => <li>{job.description}</li>);

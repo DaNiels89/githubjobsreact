@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [jobs, setJobs] = useState([]);
+  const [job, setJob] = useState('');
 
   function getAllJobs() {
-    fetch('https://github-jobs-bogota.herokuapp.com/')
+    fetch('https://jobs.github.com/positions.json')
       .then(response => response.json())
-      .then(data => setJobs(data));
+      .then(data => setJob(data.file));
   }
 
   // function getJobTitle() {
@@ -30,29 +30,14 @@ function App() {
 
   useEffect(() => {
     getAllJobs();
-    // getCompanyName();
     // getJobTitle();
     // getJobDescription();
   }, []);
 
-  const jobTitle = () =>
-    jobs.map(job => (
-      <div>
-        <li>{job.company}</li>
-        <li>{job.title}</li>
-        {/* <li>{job.description}</li> */}
-      </div>
-    ));
-  // const jobDescription = () => jobs.map(job => <li>{job.description}</li>);
-  // const companyName = () => jobs.map(job => <li>{job.company}</li>);
-
   return (
     <div className="App">
-      <ol>
-        {/* {companyName()} */}
-        {jobTitle()}
-        {/* {jobDescription()} */}
-      </ol>
+      <h1>Github Jobs</h1>
+      <p>{job}</p>
     </div>
   );
 }

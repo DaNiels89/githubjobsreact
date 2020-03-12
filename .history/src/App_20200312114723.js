@@ -35,26 +35,9 @@ function App() {
     // getJobDescription();
   }, []);
 
-  const jobTitle = () =>
-    jobs.map(job => (
-      <div>
-        <li>{job.company}</li>
-        <li>{job.title}</li>
-        {/* <li>{job.description}</li> */}
-      </div>
-    ));
-  // const jobDescription = () => jobs.map(job => <li>{job.description}</li>);
-  // const companyName = () => jobs.map(job => <li>{job.company}</li>);
+  const newJobs = () => jobs.map(job => <li>{job.title}</li>);
 
-  return (
-    <div className="App">
-      <ol>
-        {/* {companyName()} */}
-        {jobTitle()}
-        {/* {jobDescription()} */}
-      </ol>
-    </div>
-  );
+  return <div className="App">{newJobs()}</div>;
 }
 
 export default App;
